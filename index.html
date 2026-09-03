@@ -48,13 +48,55 @@
       .result-grid .result-hand:first-child {
         display: none;
       }
+
+      /* Branded masthead: compact enough to preserve the portrait no-scroll layout. */
+      .brand-logo {
+        display: block;
+        width: min(100%, 28rem);
+        max-height: clamp(4.4rem, 12svh, 7.2rem);
+        object-fit: contain;
+        filter: drop-shadow(0 0 10px rgba(242, 201, 76, 0.2));
+      }
+
+      .brand-title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .masthead .eyebrow {
+        margin-bottom: -0.2rem;
+      }
+
+      @media (max-width: 600px) and (orientation: portrait) {
+        .brand-logo {
+          width: min(94vw, 22rem);
+          max-height: 5.4rem;
+        }
+
+        .masthead {
+          gap: 0.2rem;
+          padding-bottom: 0.65rem;
+        }
+      }
     </style>
   </head>
   <body>
     <main class="app-shell" aria-labelledby="app-title">
       <header class="masthead">
         <p class="eyebrow">9/6 Jacks or Better</p>
-        <h1 id="app-title"><span aria-hidden="true">◆</span> Ten Play <span aria-hidden="true">◆</span></h1>
+        <h1 id="app-title" class="brand-title">Vig Wire Labs 10 Play Video Poker</h1>
+        <img
+          class="brand-logo"
+          src="./assets/branding/ten-play/logo-primary-wide.png"
+          alt="Vig Wire Labs 10 Play Video Poker"
+        />
         <div class="mode-switch" role="group" aria-label="Display mode">
           <button type="button" class="mode-button is-active" data-mode="trainer">Trainer</button>
           <button type="button" class="mode-button" data-mode="casino">Casino</button>
