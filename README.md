@@ -37,4 +37,4 @@ npm run validate
 
 ## Deployment
 
-The included GitHub Pages workflow publishes the repository root whenever `main` is updated. Enable GitHub Pages with **Source: GitHub Actions** in the repository settings.
+The included GitHub Pages workflow enables Pages and publishes the repository root whenever `main` is updated.
