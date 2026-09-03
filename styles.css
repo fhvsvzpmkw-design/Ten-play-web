@@ -684,3 +684,489 @@ footer {
     }
   }
 }
+
+
+/* Portrait viewport layout: keep every game phase inside Safari's visible window.
+   Landscape intentionally retains the standard scrolling layout. */
+@media (orientation: portrait) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  body {
+    min-height: 0;
+  }
+
+  .app-shell {
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    gap: 0.45rem;
+    width: min(100%, 64rem);
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    padding:
+      max(0.45rem, env(safe-area-inset-top))
+      clamp(0.6rem, 2vw, 1rem)
+      max(0.4rem, env(safe-area-inset-bottom));
+    overflow: hidden;
+  }
+
+  .masthead {
+    grid-template-columns: minmax(8rem, 1fr) auto minmax(13rem, 1fr);
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0;
+  }
+
+  .masthead .eyebrow {
+    justify-self: start;
+    margin: 0;
+    text-align: left;
+  }
+
+  .masthead h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3rem);
+    white-space: nowrap;
+  }
+
+  .masthead .mode-switch {
+    justify-self: end;
+  }
+
+  .mode-button {
+    min-height: 2.25rem;
+  }
+
+  .meter-bar {
+    min-height: 0;
+    margin: 0;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .machine {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+    padding: clamp(0.55rem, 1.6vw, 0.9rem);
+    border-radius: 1.2rem;
+  }
+
+  .main-hand {
+    flex: 0 1 auto;
+    width: min(100%, 47rem);
+    min-height: 0;
+    margin-inline: auto;
+    gap: clamp(0.3rem, 1.2vw, 0.65rem);
+  }
+
+  .card,
+  .card-back {
+    max-height: 23vh;
+    border-radius: clamp(0.4rem, 1.4vw, 0.7rem);
+  }
+
+  .status-panel {
+    flex: 0 0 auto;
+    min-height: 3.25rem;
+    margin: 0.45rem 0;
+    padding: 0.25rem;
+  }
+
+  .wager-row {
+    flex: 0 0 auto;
+  }
+
+  .coin-button {
+    min-height: 2.35rem;
+  }
+
+  .deal-button {
+    flex: 0 0 auto;
+    min-height: 3rem;
+    margin-top: 0.55rem;
+  }
+
+  .suggestions-panel,
+  .results-panel {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: 0.55rem;
+    padding-top: 0.5rem;
+    overflow: hidden;
+  }
+
+  .section-heading {
+    margin-bottom: 0.4rem;
+  }
+
+  .section-heading .eyebrow {
+    margin-bottom: 0.1rem;
+  }
+
+  .suggestions {
+    gap: 0.35rem;
+  }
+
+  .suggestion {
+    min-height: 0;
+    padding: 0.42rem 0.55rem;
+  }
+
+  .secondary-button {
+    min-height: 2.55rem;
+    margin-top: 0.45rem;
+  }
+
+  .result-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+
+  .result-hand {
+    min-width: 0;
+    padding: 0.4rem;
+  }
+
+  .result-cards {
+    gap: 0.12rem;
+  }
+
+  .result-card {
+    border-width: 1px;
+    font-size: clamp(0.44rem, 1.15vw, 0.66rem);
+  }
+
+  .result-caption {
+    display: grid;
+    gap: 0.1rem;
+    margin-top: 0.25rem;
+    font-size: clamp(0.55rem, 1.2vw, 0.68rem);
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 38rem) {
+  .app-shell {
+    gap: 0.3rem;
+    padding:
+      max(0.3rem, env(safe-area-inset-top))
+      max(0.35rem, env(safe-area-inset-left))
+      max(0.3rem, env(safe-area-inset-bottom))
+      max(0.35rem, env(safe-area-inset-right));
+  }
+
+  .masthead {
+    grid-template-columns: 1fr auto;
+    gap: 0.25rem 0.5rem;
+  }
+
+  .masthead .eyebrow {
+    display: none;
+  }
+
+  .masthead h1 {
+    justify-self: start;
+    font-size: clamp(1.55rem, 8vw, 2rem);
+  }
+
+  .masthead .mode-switch {
+    grid-template-columns: repeat(2, minmax(4.2rem, 1fr));
+  }
+
+  .mode-button {
+    min-height: 2rem;
+    padding: 0.3rem 0.55rem;
+    font-size: 0.75rem;
+  }
+
+  .meter-bar {
+    grid-template-columns: repeat(2, 1fr) auto;
+    gap: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.7rem;
+  }
+
+  .meter-value {
+    font-size: 1.05rem;
+  }
+
+  .meter-label,
+  .meter-detail span {
+    font-size: 0.58rem;
+  }
+
+  .meter-detail {
+    grid-column: auto;
+    justify-content: end;
+    gap: 0.3rem;
+    padding: 0;
+    border: 0;
+  }
+
+  .meter-detail span {
+    display: grid;
+  }
+
+  .machine {
+    padding: 0.45rem;
+    border-radius: 0.8rem;
+  }
+
+  .main-hand {
+    gap: 0.22rem;
+  }
+
+  .card,
+  .card-back {
+    max-height: 17vh;
+    border-radius: 0.38rem;
+  }
+
+  .card {
+    padding: 0.22rem;
+  }
+
+  .card-corner {
+    font-size: clamp(0.68rem, 4vw, 0.92rem);
+  }
+
+  .card-suit {
+    font-size: clamp(1rem, 7vw, 1.65rem);
+  }
+
+  .hold-label {
+    bottom: 0.15rem;
+    padding: 0.08rem 0.22rem;
+    font-size: 0.5rem;
+  }
+
+  .status-panel {
+    min-height: 2.65rem;
+    margin: 0.3rem 0;
+    gap: 0.05rem;
+    padding: 0.12rem;
+  }
+
+  .status-panel strong {
+    font-size: clamp(0.72rem, 3.4vw, 0.88rem);
+  }
+
+  .status-panel span {
+    font-size: 0.67rem;
+  }
+
+  .wager-row {
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .coin-buttons {
+    flex: 1 1 auto;
+    grid-template-columns: repeat(5, minmax(2rem, 1fr));
+    gap: 0.2rem;
+  }
+
+  .coin-button {
+    min-height: 2rem;
+    border-radius: 0.4rem;
+    font-size: 0.72rem;
+  }
+
+  .total-bet {
+    flex: 0 0 auto;
+    font-size: 0.65rem;
+    text-align: right;
+  }
+
+  .deal-button {
+    min-height: 2.65rem;
+    margin-top: 0.35rem;
+    border-radius: 0.65rem;
+    font-size: 0.88rem;
+  }
+
+  .suggestions-panel,
+  .results-panel {
+    margin-top: 0.35rem;
+    padding-top: 0.35rem;
+  }
+
+  .section-heading {
+    align-items: center;
+    margin-bottom: 0.25rem;
+  }
+
+  .section-heading .eyebrow {
+    display: none;
+  }
+
+  .section-heading h2 {
+    font-size: 0.95rem;
+  }
+
+  .calculation-state,
+  .round-total {
+    font-size: 0.65rem;
+  }
+
+  .suggestions {
+    gap: 0.22rem;
+  }
+
+  .suggestion {
+    grid-template-columns: 4.9rem minmax(0, 1fr) auto;
+    gap: 0.3rem;
+    padding: 0.28rem 0.35rem;
+    border-radius: 0.55rem;
+  }
+
+  .mini-hold {
+    gap: 0.08rem;
+  }
+
+  .mini-card,
+  .mini-back {
+    width: 0.92rem;
+    font-size: 0.4rem;
+  }
+
+  .suggestion-copy strong {
+    font-size: 0.69rem;
+  }
+
+  .suggestion-copy small {
+    margin-top: 0.06rem;
+    overflow: hidden;
+    font-size: 0.56rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .best-badge {
+    margin-right: 0.18rem;
+    padding: 0.05rem 0.18rem;
+    font-size: 0.48rem;
+  }
+
+  .ev-block {
+    grid-column: auto;
+    display: block;
+    min-width: 3.45rem;
+    text-align: right;
+  }
+
+  .ev-block strong {
+    font-size: 0.62rem;
+  }
+
+  .ev-block small {
+    margin-top: 0.05rem;
+    font-size: 0.5rem;
+  }
+
+  .heat-track {
+    display: none;
+  }
+
+  .secondary-button {
+    min-height: 2.15rem;
+    margin-top: 0.3rem;
+    border-radius: 0.55rem;
+    font-size: 0.7rem;
+  }
+
+  .result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.25rem;
+  }
+
+  .result-hand {
+    padding: 0.25rem;
+    border-radius: 0.45rem;
+  }
+
+  .result-card {
+    font-size: clamp(0.42rem, 2.3vw, 0.58rem);
+  }
+
+  .result-caption {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.2rem;
+    margin-top: 0.12rem;
+    font-size: 0.52rem;
+  }
+
+  .result-caption span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 38rem) and (max-height: 44rem) {
+  .app-shell {
+    padding-top: max(0.15rem, env(safe-area-inset-top));
+    padding-bottom: max(0.15rem, env(safe-area-inset-bottom));
+  }
+
+  .masthead h1 {
+    font-size: 1.4rem;
+  }
+
+  .mode-button {
+    min-height: 1.75rem;
+  }
+
+  .meter-bar {
+    padding-block: 0.18rem;
+  }
+
+  .card,
+  .card-back {
+    max-height: 14.5vh;
+  }
+
+  .status-panel {
+    min-height: 2.25rem;
+    margin-block: 0.2rem;
+  }
+
+  .coin-button {
+    min-height: 1.8rem;
+  }
+
+  .deal-button {
+    min-height: 2.3rem;
+    margin-top: 0.25rem;
+  }
+
+  .suggestions-panel,
+  .results-panel {
+    margin-top: 0.25rem;
+    padding-top: 0.25rem;
+  }
+
+  .suggestion {
+    padding-block: 0.2rem;
+  }
+
+  .secondary-button {
+    min-height: 1.9rem;
+    margin-top: 0.2rem;
+  }
+
+  .result-hand {
+    padding-block: 0.18rem;
+  }
+}
