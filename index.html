@@ -9,7 +9,7 @@
       content="Ten Play 9/6 Jacks or Better video poker trainer and simulator."
     />
     <title>Ten Play Video Poker</title>
-    <link rel="stylesheet" href="./styles.css?v=portrait-1" />
+    <link rel="stylesheet" href="./styles.css?v=rich-ui-1" />
     <style>
       /* Keep card-state contrast strong on small Safari displays. */
       .card.is-held {
@@ -55,7 +55,9 @@
         width: min(100%, 28rem);
         max-height: clamp(4.4rem, 12svh, 7.2rem);
         object-fit: contain;
-        filter: drop-shadow(0 0 10px rgba(242, 201, 76, 0.2));
+        filter:
+          drop-shadow(0 0 8px rgba(87, 255, 99, 0.22))
+          drop-shadow(0 0 14px rgba(242, 201, 76, 0.24));
       }
 
       .brand-title {
@@ -72,6 +74,144 @@
 
       .masthead .eyebrow {
         margin-bottom: -0.2rem;
+      }
+
+      /* Rich casino-surface treatment: same structure, stronger visual hierarchy. */
+      body {
+        background:
+          radial-gradient(circle at 50% -10%, rgba(77, 255, 112, 0.2), transparent 28rem),
+          radial-gradient(circle at 50% 45%, rgba(20, 120, 62, 0.24), transparent 34rem),
+          linear-gradient(150deg, #07361d, #03190e 72%);
+      }
+
+      .meter-bar,
+      .machine,
+      .suggestion,
+      .result-hand {
+        border-color: rgba(255, 221, 84, 0.34);
+      }
+
+      .meter-bar {
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.04), transparent),
+          rgba(0, 18, 8, 0.58);
+        box-shadow:
+          inset 0 0 0 1px rgba(77, 255, 112, 0.06),
+          0 0 20px rgba(77, 255, 112, 0.08);
+      }
+
+      .meter-value {
+        color: #fff4b6;
+        text-shadow: 0 0 12px rgba(255, 214, 71, 0.22);
+      }
+
+      .machine {
+        background:
+          radial-gradient(circle at 50% 0%, rgba(58, 173, 92, 0.16), transparent 22rem),
+          linear-gradient(180deg, rgba(255,255,255,0.035), transparent 35%),
+          #0a3c22;
+        box-shadow:
+          0 18px 55px rgba(0, 0, 0, 0.42),
+          inset 0 0 0 1px rgba(255, 214, 71, 0.12),
+          inset 0 1px rgba(255, 255, 255, 0.08);
+      }
+
+      .mode-switch {
+        border-color: rgba(255, 221, 84, 0.45);
+        background: linear-gradient(180deg, rgba(0, 22, 10, 0.9), rgba(0, 10, 5, 0.82));
+        box-shadow:
+          inset 0 0 0 1px rgba(77, 255, 112, 0.08),
+          0 0 14px rgba(77, 255, 112, 0.1);
+      }
+
+      .mode-button {
+        transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+      }
+
+      .mode-button.is-active {
+        background: linear-gradient(180deg, #fff1a0, #e9b72f);
+        color: #1a1300;
+        box-shadow:
+          inset 0 1px rgba(255,255,255,0.65),
+          0 0 0 1px rgba(255, 213, 72, 0.9),
+          0 0 16px rgba(255, 199, 55, 0.32);
+      }
+
+      .coin-button {
+        border-color: rgba(93, 255, 122, 0.25);
+        background: linear-gradient(180deg, rgba(8, 76, 39, 0.96), rgba(2, 39, 20, 0.96));
+        color: #d6e7d8;
+        box-shadow:
+          inset 0 1px rgba(255,255,255,0.05),
+          inset 0 -10px 20px rgba(0,0,0,0.14);
+      }
+
+      .coin-button.is-active {
+        border-color: #ffdb58;
+        background: linear-gradient(180deg, #ffe67c, #eab328 72%, #cb8d12);
+        color: #261900;
+        box-shadow:
+          inset 0 1px rgba(255,255,255,0.68),
+          0 0 0 2px rgba(112, 255, 119, 0.32),
+          0 0 18px rgba(255, 204, 54, 0.4);
+        transform: translateY(-1px);
+      }
+
+      .deal-button {
+        border: 1px solid #ffdb58;
+        background:
+          linear-gradient(180deg, #fff08c 0%, #ffc933 38%, #e9a414 100%);
+        color: #201400;
+        letter-spacing: 0.02em;
+        text-shadow: 0 1px rgba(255,255,255,0.35);
+        box-shadow:
+          inset 0 2px rgba(255,255,255,0.58),
+          inset 0 -8px 16px rgba(150, 82, 0, 0.14),
+          0 0 0 2px rgba(70, 255, 105, 0.2),
+          0 8px 20px rgba(0,0,0,0.28),
+          0 0 22px rgba(255, 198, 40, 0.22);
+      }
+
+      .secondary-button {
+        border-color: rgba(87, 255, 108, 0.42);
+        background: linear-gradient(180deg, rgba(8, 70, 36, 0.96), rgba(2, 35, 18, 0.96));
+        color: #dff8e1;
+        box-shadow:
+          inset 0 1px rgba(255,255,255,0.05),
+          0 0 14px rgba(65, 220, 122, 0.08);
+      }
+
+      .status-panel {
+        border-color: rgba(255, 221, 84, 0.28);
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.12), transparent);
+      }
+
+      .status-panel strong {
+        color: #fff5c7;
+        text-shadow: 0 0 12px rgba(255, 213, 72, 0.18);
+      }
+
+      .suggestion {
+        background: linear-gradient(180deg, rgba(17, 86, 47, 0.9), rgba(8, 57, 31, 0.92));
+        box-shadow: inset 0 1px rgba(255,255,255,0.035);
+      }
+
+      .suggestion.is-best {
+        border-color: #ffdb58;
+        background:
+          linear-gradient(90deg, rgba(255, 209, 60, 0.11), transparent 24%),
+          linear-gradient(180deg, rgba(22, 91, 49, 0.94), rgba(8, 56, 30, 0.94));
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 221, 84, 0.16),
+          0 0 18px rgba(255, 207, 53, 0.15);
+      }
+
+      .result-hand {
+        background:
+          linear-gradient(180deg, rgba(13, 70, 38, 0.78), rgba(3, 35, 18, 0.86));
+        box-shadow:
+          inset 0 1px rgba(255,255,255,0.035),
+          0 6px 14px rgba(0,0,0,0.14);
       }
 
       @media (max-width: 600px) and (orientation: portrait) {
