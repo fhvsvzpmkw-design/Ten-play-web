@@ -10,6 +10,28 @@
     />
     <title>Ten Play Video Poker</title>
     <link rel="stylesheet" href="./styles.css?v=portrait-1" />
+    <style>
+      /* Keep card-state contrast strong on small Safari displays. */
+      .card.is-held {
+        border-color: #ffe36b;
+        box-shadow:
+          inset 0 0 0 2px rgba(255, 227, 107, 0.6),
+          0 0 0 4px rgba(242, 201, 76, 0.85),
+          0 0 16px 7px rgba(242, 201, 76, 0.72),
+          0 0 38px 14px rgba(242, 201, 76, 0.5);
+        z-index: 2;
+      }
+
+      .card.is-winning {
+        border-color: #67ff9f;
+        box-shadow:
+          inset 0 0 0 2px rgba(103, 255, 159, 0.65),
+          0 0 0 4px rgba(65, 220, 122, 0.9),
+          0 0 18px 8px rgba(65, 220, 122, 0.78),
+          0 0 42px 16px rgba(65, 220, 122, 0.55);
+        z-index: 3;
+      }
+    </style>
   </head>
   <body>
     <main class="app-shell" aria-labelledby="app-title">
