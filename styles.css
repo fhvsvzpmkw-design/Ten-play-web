@@ -17,9 +17,7 @@
   font-synthesis: none;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   min-width: 320px;
@@ -38,23 +36,12 @@ body {
     linear-gradient(145deg, var(--felt-900), var(--felt-950) 70%);
 }
 
-button {
-  border: 0;
-  color: inherit;
-  font: inherit;
-}
-
-button:not(:disabled) {
-  cursor: pointer;
-}
-
-button:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 3px;
-}
+button { border: 0; color: inherit; font: inherit; }
+button:not(:disabled) { cursor: pointer; }
+button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 
 .app-shell {
-  width: min(100%, 64rem);
+  width: min(100%, 72rem);
   min-height: 100svh;
   margin: 0 auto;
   padding: max(1rem, env(safe-area-inset-top)) clamp(0.75rem, 3vw, 2rem) max(1.5rem, env(safe-area-inset-bottom));
@@ -77,34 +64,9 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
-h1,
-h2,
-p {
-  margin-top: 0;
-}
-
-h1 {
-  margin-bottom: 0.15rem;
-  color: var(--gold-500);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: clamp(1.9rem, 8vw, 3.35rem);
-  line-height: 1;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  text-shadow: 0 4px 20px rgba(242, 201, 76, 0.24);
-}
-
-h1 span {
-  display: inline-block;
-  color: #ef7d45;
-  font-size: 0.62em;
-  transform: translateY(-0.08em);
-}
-
-h2 {
-  margin-bottom: 0;
-  font-size: clamp(1.15rem, 3vw, 1.45rem);
-}
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 0.15rem; }
+h2 { margin-bottom: 0; font-size: clamp(1.15rem, 3vw, 1.45rem); }
 
 .mode-switch {
   display: grid;
@@ -126,10 +88,7 @@ h2 {
   font-weight: 800;
 }
 
-.mode-button.is-active {
-  background: var(--cream);
-  color: var(--felt-950);
-}
+.mode-button.is-active { background: var(--cream); color: var(--felt-950); }
 
 .meter-bar {
   display: grid;
@@ -161,26 +120,16 @@ h2 {
   font-variant-numeric: tabular-nums;
 }
 
-.meter-detail {
-  display: flex;
-  gap: 0.65rem;
-  padding-bottom: 0.15rem;
-}
-
-.meter-detail b {
-  color: var(--cream);
-  font-variant-numeric: tabular-nums;
-}
+.meter-detail { display: flex; gap: 0.65rem; padding-bottom: 0.15rem; }
+.meter-detail b { color: var(--cream); font-variant-numeric: tabular-nums; }
 
 .machine {
   padding: clamp(0.85rem, 3vw, 1.5rem);
   overflow: hidden;
   border: 1px solid rgba(255, 229, 138, 0.28);
   border-radius: clamp(1rem, 4vw, 1.75rem);
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0)),
-    var(--felt-800);
-  box-shadow: var(--shadow), inset 0 1px rgba(255, 255, 255, 0.08);
+  background: linear-gradient(rgba(255,255,255,0.035), rgba(255,255,255,0)), var(--felt-800);
+  box-shadow: var(--shadow), inset 0 1px rgba(255,255,255,0.08);
 }
 
 .main-hand {
@@ -206,29 +155,15 @@ h2 {
   border: 2px solid rgba(16, 32, 23, 0.18);
   background: #fffdf2;
   color: var(--ink);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.24);
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-.card.red {
-  color: #c22c35;
-}
-
-.card.is-held {
-  border-color: var(--gold-500);
-  box-shadow: 0 0 0 3px rgba(242, 201, 76, 0.2), 0 0 22px rgba(242, 201, 76, 0.35);
-  transform: translateY(-0.2rem);
-}
-
-.card.is-winning {
-  border-color: var(--win);
-  box-shadow: 0 0 0 3px rgba(65, 220, 122, 0.2), 0 0 22px rgba(65, 220, 122, 0.4);
-}
-
-.card[role="button"]:active {
-  transform: translateY(0);
-}
+.card.red { color: #c22c35; }
+.card.is-held { border-color: var(--gold-500); transform: translateY(-0.2rem); }
+.card.is-winning { border-color: var(--win); }
+.card[role="button"]:active { transform: translateY(0); }
 
 .card-corner {
   display: grid;
@@ -240,17 +175,8 @@ h2 {
   line-height: 0.9;
 }
 
-.card-corner.bottom {
-  justify-self: end;
-  align-self: end;
-  transform: rotate(180deg);
-}
-
-.card-suit {
-  align-self: center;
-  justify-self: center;
-  font-size: clamp(1.2rem, 6vw, 2.65rem);
-}
+.card-corner.bottom { justify-self: end; align-self: end; transform: rotate(180deg); }
+.card-suit { align-self: center; justify-self: center; font-size: clamp(1.2rem, 6vw, 2.65rem); }
 
 .hold-label {
   position: absolute;
@@ -270,10 +196,10 @@ h2 {
 .card-back {
   border: 3px solid #f9ecd0;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.13) 25%, transparent 25%) 0 0 / 0.75rem 0.75rem,
-    linear-gradient(315deg, rgba(255, 255, 255, 0.13) 25%, transparent 25%) 0 0 / 0.75rem 0.75rem,
+    linear-gradient(135deg, rgba(255,255,255,0.13) 25%, transparent 25%) 0 0 / 0.75rem 0.75rem,
+    linear-gradient(315deg, rgba(255,255,255,0.13) 25%, transparent 25%) 0 0 / 0.75rem 0.75rem,
     #153d8d;
-  box-shadow: inset 0 0 0 2px #153d8d, 0 8px 18px rgba(0, 0, 0, 0.24);
+  box-shadow: inset 0 0 0 2px #153d8d, 0 8px 18px rgba(0,0,0,0.24);
 }
 
 .card-back::after {
@@ -283,7 +209,7 @@ h2 {
   place-items: center;
   width: 48%;
   aspect-ratio: 1;
-  border: 2px solid rgba(255, 255, 255, 0.72);
+  border: 2px solid rgba(255,255,255,0.72);
   transform: rotate(45deg);
   color: #fff;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -311,38 +237,21 @@ h2 {
   white-space: nowrap;
 }
 
-.status-panel span {
-  color: var(--muted);
-  font-size: 0.85rem;
-}
+.status-panel span { color: var(--muted); font-size: 0.85rem; }
 
-.wager-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-}
-
-.coin-buttons {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(2.6rem, 1fr));
-  gap: 0.35rem;
-}
+.wager-row { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.coin-buttons { display: grid; grid-template-columns: repeat(5, minmax(2.6rem, 1fr)); gap: 0.35rem; }
 
 .coin-button {
   min-height: 2.65rem;
   border: 1px solid var(--line);
   border-radius: 0.6rem;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255,255,255,0.07);
   color: var(--muted);
   font-weight: 900;
 }
 
-.coin-button.is-active {
-  border-color: var(--gold-500);
-  background: var(--gold-500);
-  color: #261b00;
-}
+.coin-button.is-active { border-color: var(--gold-500); background: var(--gold-500); color: #261b00; }
 
 .total-bet {
   color: var(--muted);
@@ -353,45 +262,23 @@ h2 {
 }
 
 .deal-button,
-.secondary-button {
-  width: 100%;
-  min-height: 3.6rem;
-  border-radius: 0.9rem;
-  font-weight: 900;
-}
+.secondary-button { width: 100%; min-height: 3.6rem; border-radius: 0.9rem; font-weight: 900; }
 
 .deal-button {
   margin-top: 0.8rem;
   background: linear-gradient(180deg, #ffe378, #f2ba2f);
   color: #231800;
   font-size: 1.05rem;
-  box-shadow: 0 7px 20px rgba(242, 186, 47, 0.24);
+  box-shadow: 0 7px 20px rgba(242,186,47,0.24);
 }
 
-.deal-button:active {
-  transform: translateY(1px);
-}
-
-.deal-button:disabled,
-.secondary-button:disabled {
-  cursor: wait;
-  opacity: 0.55;
-}
+.deal-button:active { transform: translateY(1px); }
+.deal-button:disabled, .secondary-button:disabled { cursor: wait; opacity: 0.55; }
 
 .suggestions-panel,
-.results-panel {
-  margin-top: 1.25rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-}
+.results-panel { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); }
 
-.section-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-}
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
 
 .calculation-state,
 .round-total {
@@ -401,10 +288,7 @@ h2 {
   font-weight: 800;
 }
 
-.suggestions {
-  display: grid;
-  gap: 0.5rem;
-}
+.suggestions { display: grid; gap: 0.5rem; }
 
 .suggestion {
   display: grid;
@@ -415,21 +299,12 @@ h2 {
   padding: 0.7rem;
   border: 1px solid transparent;
   border-radius: 0.8rem;
-  background: rgba(255, 255, 255, 0.065);
+  background: rgba(255,255,255,0.065);
   text-align: left;
 }
 
-.suggestion.is-best {
-  border-color: var(--gold-500);
-  background: rgba(242, 201, 76, 0.12);
-  box-shadow: 0 0 18px rgba(242, 201, 76, 0.13);
-}
-
-.mini-hold {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.15rem;
-}
+.suggestion.is-best { border-color: var(--gold-500); background: rgba(242,201,76,0.12); }
+.mini-hold { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.15rem; }
 
 .mini-card,
 .mini-back {
@@ -443,124 +318,27 @@ h2 {
   font-weight: 900;
 }
 
-.mini-card {
-  border: 1px solid #bbb7aa;
-  background: #fffdf2;
-  color: #182019;
-}
+.mini-card { border: 1px solid #bbb7aa; background: #fffdf2; color: #182019; }
+.mini-card.red { color: #c22c35; }
+.mini-back { border: 1px solid #dbe2ff; background: #153d8d; color: #fff; }
+.suggestion-copy { min-width: 0; }
+.suggestion-copy strong, .suggestion-copy small { display: block; }
+.suggestion-copy strong { overflow: hidden; color: var(--cream); font-size: 0.9rem; text-overflow: ellipsis; white-space: nowrap; }
+.suggestion-copy small { margin-top: 0.18rem; color: var(--muted); font-size: 0.72rem; }
+.ev-block { min-width: 4.9rem; text-align: right; }
+.ev-block strong, .ev-block small { display: block; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.ev-block strong { font-size: 0.78rem; }
+.ev-block small { margin-top: 0.18rem; color: var(--muted); font-size: 0.67rem; }
+.heat-track { height: 0.35rem; margin-top: 0.35rem; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,0.12); }
+.heat-fill { height: 100%; border-radius: inherit; background: var(--danger); }
+.heat-fill.good { background: var(--gold-500); }
+.heat-fill.best { background: var(--win); }
+.best-badge { display: inline-block; margin-right: 0.35rem; padding: 0.08rem 0.3rem; border-radius: 0.25rem; background: var(--gold-500); color: #281d00; font-size: 0.62rem; font-weight: 900; }
+.secondary-button { margin-top: 0.65rem; border: 1px solid var(--line); background: rgba(255,255,255,0.075); color: var(--cream); }
 
-.mini-card.red {
-  color: #c22c35;
-}
-
-.mini-back {
-  border: 1px solid #dbe2ff;
-  background: #153d8d;
-  color: #fff;
-}
-
-.suggestion-copy {
-  min-width: 0;
-}
-
-.suggestion-copy strong,
-.suggestion-copy small {
-  display: block;
-}
-
-.suggestion-copy strong {
-  overflow: hidden;
-  color: var(--cream);
-  font-size: 0.9rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.suggestion-copy small {
-  margin-top: 0.18rem;
-  color: var(--muted);
-  font-size: 0.72rem;
-}
-
-.ev-block {
-  min-width: 4.9rem;
-  text-align: right;
-}
-
-.ev-block strong,
-.ev-block small {
-  display: block;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-}
-
-.ev-block strong {
-  font-size: 0.78rem;
-}
-
-.ev-block small {
-  margin-top: 0.18rem;
-  color: var(--muted);
-  font-size: 0.67rem;
-}
-
-.heat-track {
-  height: 0.35rem;
-  margin-top: 0.35rem;
-  overflow: hidden;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.heat-fill {
-  height: 100%;
-  border-radius: inherit;
-  background: var(--danger);
-}
-
-.heat-fill.good {
-  background: var(--gold-500);
-}
-
-.heat-fill.best {
-  background: var(--win);
-}
-
-.best-badge {
-  display: inline-block;
-  margin-right: 0.35rem;
-  padding: 0.08rem 0.3rem;
-  border-radius: 0.25rem;
-  background: var(--gold-500);
-  color: #281d00;
-  font-size: 0.62rem;
-  font-weight: 900;
-}
-
-.secondary-button {
-  margin-top: 0.65rem;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.075);
-  color: var(--cream);
-}
-
-.result-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
-}
-
-.result-hand {
-  padding: 0.65rem;
-  border: 1px solid var(--line);
-  border-radius: 0.85rem;
-  background: rgba(0, 0, 0, 0.14);
-}
-
-.result-cards {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.22rem;
-}
+.result-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
+.result-hand { padding: 0.65rem; border: 1px solid var(--line); border-radius: 0.85rem; background: rgba(0,0,0,0.14); }
+.result-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.22rem; }
 
 .result-card {
   display: grid;
@@ -575,598 +353,268 @@ h2 {
   font-weight: 900;
 }
 
-.result-card.red {
-  color: #c22c35;
-}
+.result-card.red { color: #c22c35; }
+.result-caption { display: flex; justify-content: space-between; gap: 0.5rem; margin-top: 0.45rem; color: var(--muted); font-size: 0.72rem; }
+.result-caption strong { color: var(--gold-300); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
 
-.result-card.is-winning {
-  border-color: var(--win);
-  box-shadow: 0 0 8px rgba(65, 220, 122, 0.35);
-}
-
-.result-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin-top: 0.45rem;
-  color: var(--muted);
-  font-size: 0.72rem;
-}
-
-.result-caption strong {
-  color: var(--gold-300);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-}
-
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 0 0;
-  color: var(--muted);
-  font-size: 0.72rem;
-}
-
-.text-button {
-  min-height: 2.75rem;
-  padding: 0 0.35rem;
-  background: transparent;
-  color: var(--gold-300);
-  font-weight: 800;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-@media (max-width: 38rem) {
-  .app-shell {
-    padding-inline: 0.6rem;
-  }
-
-  .meter-bar {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .meter-detail {
-    grid-column: 1 / -1;
-    justify-content: center;
-    padding-top: 0.35rem;
-    border-top: 1px solid var(--line);
-  }
-
-  .wager-row {
-    display: grid;
-  }
-
-  .total-bet {
-    text-align: center;
-  }
-
-  .suggestion {
-    grid-template-columns: 6.9rem minmax(0, 1fr);
-  }
-
-  .ev-block {
-    grid-column: 2;
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: left;
-  }
-
-  .heat-track {
-    grid-column: 1 / -1;
-  }
-
-  .result-grid {
-    grid-template-columns: 1fr;
-  }
-
-  footer {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-}
+footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0 0; color: var(--muted); font-size: 0.72rem; }
+.text-button { min-height: 2.75rem; padding: 0 0.35rem; background: transparent; color: var(--gold-300); font-weight: 800; }
+[hidden] { display: none !important; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .card.is-held,
-  .card.is-winning {
-    animation: card-glow 1.7s ease-in-out infinite alternate;
-  }
-
-  @keyframes card-glow {
-    to {
-      filter: brightness(1.06);
-    }
-  }
+  .card.is-held, .card.is-winning { animation: card-glow 1.7s ease-in-out infinite alternate; }
+  @keyframes card-glow { to { filter: brightness(1.06); } }
 }
 
+/* The logo is always shown as a complete cabinet marquee, never cover-cropped. */
+.brand-logo {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #001309;
+}
 
-/* Portrait viewport layout: keep every game phase inside Safari's visible window.
-   Landscape intentionally retains the standard scrolling layout. */
+/* Tall cabinet: shared by iPhone, iPad portrait, Split View and narrow Stage Manager windows. */
 @media (orientation: portrait) {
   html,
   body {
+    position: fixed;
+    inset: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
     overscroll-behavior: none;
   }
 
-  body {
-    min-height: 0;
-  }
+  body { min-height: 0; }
 
   .app-shell {
+    position: fixed;
+    inset: 0;
     display: grid;
     grid-template-rows: auto auto minmax(0, 1fr);
-    gap: 0.45rem;
-    width: min(100%, 64rem);
-    height: 100vh;
+    gap: clamp(0.28rem, 0.8vh, 0.5rem);
+    width: 100%;
     height: 100dvh;
     min-height: 0;
+    margin: 0;
     padding:
-      max(0.45rem, env(safe-area-inset-top))
-      clamp(0.6rem, 2vw, 1rem)
-      max(0.4rem, env(safe-area-inset-bottom));
+      max(0.35rem, env(safe-area-inset-top))
+      max(0.55rem, env(safe-area-inset-left))
+      max(0.35rem, env(safe-area-inset-bottom))
+      max(0.55rem, env(safe-area-inset-right));
     overflow: hidden;
   }
 
   .masthead {
-    grid-template-columns: minmax(8rem, 1fr) auto minmax(13rem, 1fr);
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0;
+    display: block !important;
+    min-height: 0;
+    margin: 0 !important;
+    padding: clamp(0.26rem, 0.7vw, 0.42rem) !important;
+  }
+
+  .brand-logo {
+    height: clamp(4.5rem, 11vh, 7rem) !important;
+    max-height: 7rem !important;
   }
 
   .masthead .eyebrow {
-    justify-self: start;
-    margin: 0;
-    text-align: left;
-  }
-
-  .masthead h1 {
-    margin: 0;
-    font-size: clamp(2rem, 5vw, 3rem);
-    white-space: nowrap;
+    display: block !important;
+    left: clamp(0.45rem, 1.5vw, 0.8rem) !important;
+    bottom: clamp(0.42rem, 1vw, 0.68rem) !important;
+    font-size: clamp(0.48rem, 1.2vw, 0.61rem) !important;
   }
 
   .masthead .mode-switch {
-    justify-self: end;
+    right: clamp(0.45rem, 1.5vw, 0.8rem) !important;
+    bottom: clamp(0.38rem, 1vw, 0.62rem) !important;
+    transform: none !important;
   }
 
-  .mode-button {
-    min-height: 2.25rem;
-  }
+  .mode-switch { grid-template-columns: repeat(2, minmax(4.4rem, 1fr)) !important; }
+  .mode-button { min-height: clamp(1.9rem, 4.2vh, 2.35rem) !important; padding: 0.32rem clamp(0.55rem, 1.5vw, 0.9rem) !important; font-size: clamp(0.72rem, 1.7vw, 0.86rem) !important; }
 
   .meter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) auto !important;
+    align-items: center !important;
+    gap: clamp(0.4rem, 1.8vw, 1rem) !important;
     min-height: 0;
-    margin: 0;
-    padding: 0.5rem 0.8rem;
+    margin: 0 !important;
+    padding: clamp(0.28rem, 0.8vh, 0.52rem) clamp(0.48rem, 1.8vw, 0.9rem) !important;
   }
 
+  .meter-detail { grid-column: auto !important; justify-content: end !important; gap: clamp(0.25rem, 1vw, 0.55rem) !important; padding: 0 !important; border: 0 !important; }
+  .meter-value { font-size: clamp(1.05rem, 3.4vw, 1.5rem) !important; }
+
   .machine {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     min-height: 0;
     height: 100%;
-    padding: clamp(0.55rem, 1.6vw, 0.9rem);
-    border-radius: 1.2rem;
+    padding: clamp(0.42rem, 1.4vw, 0.78rem) !important;
+    overflow: hidden;
   }
 
-  .main-hand {
-    flex: 0 1 auto;
-    width: min(100%, 47rem);
-    min-height: 0;
-    margin-inline: auto;
-    gap: clamp(0.3rem, 1.2vw, 0.65rem);
-  }
-
-  .card,
-  .card-back {
-    max-height: 23vh;
-    border-radius: clamp(0.4rem, 1.4vw, 0.7rem);
-  }
-
-  .status-panel {
-    flex: 0 0 auto;
-    min-height: 3.25rem;
-    margin: 0.45rem 0;
-    padding: 0.25rem;
-  }
-
-  .wager-row {
-    flex: 0 0 auto;
-  }
-
-  .coin-button {
-    min-height: 2.35rem;
-  }
-
-  .deal-button {
-    flex: 0 0 auto;
-    min-height: 3rem;
-    margin-top: 0.55rem;
-  }
+  .main-hand { flex: 0 1 auto; width: min(100%, 48rem); margin-inline: auto; gap: clamp(0.2rem, 1vw, 0.58rem) !important; }
+  .card, .card-back { max-height: clamp(7.8rem, 20vh, 13.5rem) !important; }
+  .status-panel { flex: 0 0 auto; min-height: clamp(2.3rem, 5.2vh, 3.1rem) !important; margin: clamp(0.22rem, 0.65vh, 0.42rem) 0 !important; padding: 0.15rem !important; }
+  .wager-row { display: flex !important; flex: 0 0 auto; align-items: center; gap: 0.4rem !important; }
+  .coin-buttons { flex: 1 1 auto; }
+  .coin-button { min-height: clamp(1.9rem, 4.5vh, 2.35rem) !important; }
+  .total-bet { flex: 0 0 auto; text-align: right !important; }
+  .deal-button { flex: 0 0 auto; min-height: clamp(2.35rem, 5.2vh, 3rem) !important; margin-top: clamp(0.26rem, 0.65vh, 0.48rem) !important; }
 
   .suggestions-panel,
   .results-panel {
     flex: 1 1 auto;
     min-height: 0;
-    margin-top: 0.55rem;
-    padding-top: 0.5rem;
+    margin-top: clamp(0.25rem, 0.65vh, 0.45rem) !important;
+    padding-top: clamp(0.25rem, 0.65vh, 0.45rem) !important;
     overflow: hidden;
   }
 
-  .section-heading {
-    margin-bottom: 0.4rem;
-  }
-
-  .section-heading .eyebrow {
-    margin-bottom: 0.1rem;
-  }
-
-  .suggestions {
-    gap: 0.35rem;
-  }
-
-  .suggestion {
-    min-height: 0;
-    padding: 0.42rem 0.55rem;
-  }
-
-  .secondary-button {
-    min-height: 2.55rem;
-    margin-top: 0.45rem;
-  }
-
-  .result-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 0.4rem;
-  }
-
-  .result-hand {
-    min-width: 0;
-    padding: 0.4rem;
-  }
-
-  .result-cards {
-    gap: 0.12rem;
-  }
-
-  .result-card {
-    border-width: 1px;
-    font-size: clamp(0.44rem, 1.15vw, 0.66rem);
-  }
-
-  .result-caption {
-    display: grid;
-    gap: 0.1rem;
-    margin-top: 0.25rem;
-    font-size: clamp(0.55rem, 1.2vw, 0.68rem);
-  }
-
-  footer {
-    display: none;
-  }
+  .section-heading { margin-bottom: 0.32rem !important; }
+  .result-grid { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; gap: clamp(0.2rem, 0.8vw, 0.38rem) !important; }
+  .result-hand { min-width: 0; padding: clamp(0.2rem, 0.7vw, 0.36rem) !important; }
+  .result-cards { gap: 0.12rem; }
+  .result-card { border-width: 1px; font-size: clamp(0.44rem, 1.15vw, 0.66rem); }
+  .result-caption { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 0.12rem; margin-top: 0.2rem; font-size: clamp(0.52rem, 1.15vw, 0.66rem); }
+  footer { display: none !important; }
 }
 
-@media (orientation: portrait) and (max-width: 38rem) {
+@media (orientation: portrait) and (max-width: 44rem) {
+  .brand-logo { height: clamp(4rem, 10vh, 5.6rem) !important; }
+  .masthead .eyebrow { font-size: 0.5rem !important; }
+  .masthead .mode-switch { transform: scale(0.9) !important; transform-origin: right bottom !important; }
+  .meter-label, .meter-detail span { font-size: 0.58rem !important; }
+  .meter-value { font-size: 1.05rem !important; }
+  .machine { padding: 0.45rem !important; border-radius: 0.8rem !important; }
+  .card, .card-back { max-height: 17vh !important; border-radius: 0.38rem !important; }
+  .card { padding: 0.22rem; }
+  .card-corner { font-size: clamp(0.68rem, 4vw, 0.92rem); }
+  .card-suit { font-size: clamp(1rem, 7vw, 1.65rem); }
+  .status-panel strong { font-size: clamp(0.72rem, 3.4vw, 0.88rem); }
+  .status-panel span { font-size: 0.67rem; }
+  .coin-buttons { grid-template-columns: repeat(5, minmax(2rem, 1fr)); gap: 0.2rem; }
+  .coin-button { font-size: 0.72rem; }
+  .total-bet { font-size: 0.65rem; }
+  .deal-button { font-size: 0.88rem; }
+  .section-heading .eyebrow { display: none; }
+  .section-heading h2 { font-size: 0.95rem; }
+  .calculation-state, .round-total { font-size: 0.65rem; }
+  .suggestion { grid-template-columns: 4.9rem minmax(0,1fr) auto; gap: 0.3rem; padding: 0.28rem 0.35rem; }
+  .mini-card, .mini-back { width: 0.92rem; font-size: 0.4rem; }
+  .suggestion-copy strong { font-size: 0.69rem; }
+  .suggestion-copy small { margin-top: 0.06rem; overflow: hidden; font-size: 0.56rem; text-overflow: ellipsis; white-space: nowrap; }
+  .ev-block { grid-column: auto; display: block; min-width: 3.45rem; text-align: right; }
+  .ev-block strong { font-size: 0.62rem; }
+  .ev-block small { font-size: 0.5rem; }
+  .heat-track { display: none; }
+  .secondary-button { min-height: 2.15rem; margin-top: 0.3rem; font-size: 0.7rem; }
+  .result-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 0.22rem !important; }
+  .result-card { font-size: clamp(0.42rem, 2.1vw, 0.6rem) !important; }
+  .result-caption { font-size: 0.52rem; }
+}
+
+/* Wide/short cabinet: shared iPhone/iPad landscape, with support/results beside the main game. */
+@media (orientation: landscape) and (max-height: 60rem) {
+  html,
+  body {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
   .app-shell {
-    gap: 0.3rem;
+    position: fixed;
+    inset: 0;
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    gap: clamp(0.28rem, 0.8vh, 0.45rem);
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    min-height: 0;
+    margin: 0;
     padding:
       max(0.3rem, env(safe-area-inset-top))
-      max(0.35rem, env(safe-area-inset-left))
+      max(0.55rem, env(safe-area-inset-right))
       max(0.3rem, env(safe-area-inset-bottom))
-      max(0.35rem, env(safe-area-inset-right));
+      max(0.55rem, env(safe-area-inset-left));
+    overflow: hidden;
   }
 
-  .masthead {
-    grid-template-columns: 1fr auto;
-    gap: 0.25rem 0.5rem;
-  }
-
-  .masthead .eyebrow {
-    display: none;
-  }
-
-  .masthead h1 {
-    justify-self: start;
-    font-size: clamp(1.55rem, 8vw, 2rem);
-  }
-
-  .masthead .mode-switch {
-    grid-template-columns: repeat(2, minmax(4.2rem, 1fr));
-  }
-
-  .mode-button {
-    min-height: 2rem;
-    padding: 0.3rem 0.55rem;
-    font-size: 0.75rem;
-  }
+  .masthead { display: block !important; min-height: 0; margin: 0 !important; padding: 0.28rem !important; border-radius: 0.78rem !important; }
+  .brand-logo { height: clamp(3.3rem, 9vh, 5rem) !important; max-height: 5rem !important; }
+  .masthead .eyebrow { left: 0.5rem !important; bottom: 0.42rem !important; font-size: 0.5rem !important; }
+  .masthead .mode-switch { right: 0.5rem !important; bottom: 0.36rem !important; transform: scale(0.82) !important; transform-origin: right bottom !important; }
 
   .meter-bar {
-    grid-template-columns: repeat(2, 1fr) auto;
-    gap: 0.5rem;
-    padding: 0.3rem 0.5rem;
-    border-radius: 0.7rem;
+    grid-template-columns: repeat(2, minmax(0,1fr)) auto !important;
+    align-items: center !important;
+    gap: clamp(0.45rem, 2vw, 1.2rem) !important;
+    min-height: 0;
+    margin: 0 !important;
+    padding: clamp(0.22rem, 0.7vh, 0.42rem) clamp(0.5rem, 1.4vw, 0.9rem) !important;
   }
 
-  .meter-value {
-    font-size: 1.05rem;
-  }
-
-  .meter-label,
-  .meter-detail span {
-    font-size: 0.58rem;
-  }
-
-  .meter-detail {
-    grid-column: auto;
-    justify-content: end;
-    gap: 0.3rem;
-    padding: 0;
-    border: 0;
-  }
-
-  .meter-detail span {
-    display: grid;
-  }
+  .meter-detail { grid-column: auto !important; justify-content: end !important; padding: 0 !important; border: 0 !important; }
+  .meter-value { font-size: clamp(1rem, 2.2vw, 1.35rem) !important; }
 
   .machine {
-    padding: 0.45rem;
-    border-radius: 0.8rem;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.12fr) minmax(18rem, 0.88fr);
+    grid-template-rows: minmax(0, 1fr) auto auto auto;
+    column-gap: clamp(0.55rem, 1.4vw, 1rem);
+    row-gap: clamp(0.24rem, 0.65vh, 0.42rem);
+    min-height: 0;
+    height: 100%;
+    padding: clamp(0.45rem, 1vw, 0.7rem) !important;
+    overflow: hidden;
   }
 
-  .main-hand {
-    gap: 0.22rem;
-  }
-
-  .card,
-  .card-back {
-    max-height: 17vh;
-    border-radius: 0.38rem;
-  }
-
-  .card {
-    padding: 0.22rem;
-  }
-
-  .card-corner {
-    font-size: clamp(0.68rem, 4vw, 0.92rem);
-  }
-
-  .card-suit {
-    font-size: clamp(1rem, 7vw, 1.65rem);
-  }
-
-  .hold-label {
-    bottom: 0.15rem;
-    padding: 0.08rem 0.22rem;
-    font-size: 0.5rem;
-  }
-
-  .status-panel {
-    min-height: 2.65rem;
-    margin: 0.3rem 0;
-    gap: 0.05rem;
-    padding: 0.12rem;
-  }
-
-  .status-panel strong {
-    font-size: clamp(0.72rem, 3.4vw, 0.88rem);
-  }
-
-  .status-panel span {
-    font-size: 0.67rem;
-  }
-
-  .wager-row {
-    display: flex;
-    gap: 0.35rem;
-  }
-
-  .coin-buttons {
-    flex: 1 1 auto;
-    grid-template-columns: repeat(5, minmax(2rem, 1fr));
-    gap: 0.2rem;
-  }
-
-  .coin-button {
-    min-height: 2rem;
-    border-radius: 0.4rem;
-    font-size: 0.72rem;
-  }
-
-  .total-bet {
-    flex: 0 0 auto;
-    font-size: 0.65rem;
-    text-align: right;
-  }
-
-  .deal-button {
-    min-height: 2.65rem;
-    margin-top: 0.35rem;
-    border-radius: 0.65rem;
-    font-size: 0.88rem;
-  }
+  .main-hand { grid-column: 1; grid-row: 1; align-self: center; width: min(100%, 47rem); max-height: 100%; margin-inline: auto; gap: clamp(0.22rem, 0.8vw, 0.55rem) !important; }
+  .card, .card-back { max-height: min(29vh, 12.5rem) !important; }
+  .status-panel { grid-column: 1; grid-row: 2; min-height: 2.35rem !important; margin: 0 !important; padding: 0.1rem !important; }
+  .wager-row { grid-column: 1; grid-row: 3; display: flex !important; align-items: center; gap: 0.45rem !important; }
+  .coin-buttons { flex: 1 1 auto; }
+  .coin-button { min-height: 2rem !important; }
+  .total-bet { flex: 0 0 auto; font-size: 0.7rem !important; text-align: right !important; }
+  .deal-button { grid-column: 1; grid-row: 4; min-height: 2.45rem !important; margin: 0 !important; }
 
   .suggestions-panel,
   .results-panel {
-    margin-top: 0.35rem;
-    padding-top: 0.35rem;
-  }
-
-  .section-heading {
-    align-items: center;
-    margin-bottom: 0.25rem;
-  }
-
-  .section-heading .eyebrow {
-    display: none;
-  }
-
-  .section-heading h2 {
-    font-size: 0.95rem;
-  }
-
-  .calculation-state,
-  .round-total {
-    font-size: 0.65rem;
-  }
-
-  .suggestions {
-    gap: 0.22rem;
-  }
-
-  .suggestion {
-    grid-template-columns: 4.9rem minmax(0, 1fr) auto;
-    gap: 0.3rem;
-    padding: 0.28rem 0.35rem;
-    border-radius: 0.55rem;
-  }
-
-  .mini-hold {
-    gap: 0.08rem;
-  }
-
-  .mini-card,
-  .mini-back {
-    width: 0.92rem;
-    font-size: 0.4rem;
-  }
-
-  .suggestion-copy strong {
-    font-size: 0.69rem;
-  }
-
-  .suggestion-copy small {
-    margin-top: 0.06rem;
+    grid-column: 2;
+    grid-row: 1 / 5;
+    min-height: 0;
+    margin: 0 !important;
+    padding: 0 0 0 clamp(0.45rem, 1vw, 0.7rem) !important;
+    border-top: 0 !important;
+    border-left: 1px solid var(--line);
     overflow: hidden;
-    font-size: 0.56rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 
-  .best-badge {
-    margin-right: 0.18rem;
-    padding: 0.05rem 0.18rem;
-    font-size: 0.48rem;
-  }
-
-  .ev-block {
-    grid-column: auto;
-    display: block;
-    min-width: 3.45rem;
-    text-align: right;
-  }
-
-  .ev-block strong {
-    font-size: 0.62rem;
-  }
-
-  .ev-block small {
-    margin-top: 0.05rem;
-    font-size: 0.5rem;
-  }
-
-  .heat-track {
-    display: none;
-  }
-
-  .secondary-button {
-    min-height: 2.15rem;
-    margin-top: 0.3rem;
-    border-radius: 0.55rem;
-    font-size: 0.7rem;
-  }
-
-  .result-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.22rem;
-  }
-
-  .result-hand {
-    padding: 0.25rem;
-    border-radius: 0.45rem;
-  }
-
-  .result-card {
-    font-size: clamp(0.42rem, 2.3vw, 0.58rem);
-  }
-
-  .result-caption {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 0.2rem;
-    margin-top: 0.12rem;
-    font-size: 0.52rem;
-  }
-
-  .result-caption span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+  .section-heading { margin-bottom: 0.35rem !important; }
+  .result-grid { grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: clamp(0.18rem, 0.45vw, 0.34rem) !important; }
+  .result-hand { min-width: 0; padding: clamp(0.18rem, 0.45vw, 0.32rem) !important; }
+  .result-card { font-size: clamp(0.42rem, 0.8vw, 0.61rem) !important; }
+  .result-caption { margin-top: 0.16rem; font-size: clamp(0.46rem, 0.75vw, 0.58rem); }
+  .suggestions { gap: 0.3rem !important; }
+  .suggestion { padding: 0.38rem 0.48rem !important; }
+  .secondary-button { min-height: 2.25rem !important; margin-top: 0.35rem !important; }
+  footer { display: none !important; }
 }
 
-@media (orientation: portrait) and (max-width: 38rem) and (max-height: 44rem) {
-  .app-shell {
-    padding-top: max(0.15rem, env(safe-area-inset-top));
-    padding-bottom: max(0.15rem, env(safe-area-inset-bottom));
-  }
-
-  .masthead h1 {
-    font-size: 1.4rem;
-  }
-
-  .mode-button {
-    min-height: 1.75rem;
-  }
-
-  .meter-bar {
-    padding-block: 0.18rem;
-  }
-
-  .card,
-  .card-back {
-    max-height: 14.5vh;
-  }
-
-  .status-panel {
-    min-height: 2.25rem;
-    margin-block: 0.2rem;
-  }
-
-  .coin-button {
-    min-height: 1.8rem;
-  }
-
-  .deal-button {
-    min-height: 2.3rem;
-    margin-top: 0.25rem;
-  }
-
-  .suggestions-panel,
-  .results-panel {
-    margin-top: 0.25rem;
-    padding-top: 0.25rem;
-  }
-
-  .suggestion {
-    padding-block: 0.2rem;
-  }
-
-  .secondary-button {
-    min-height: 1.9rem;
-    margin-top: 0.2rem;
-  }
-
-  .result-hand {
-    padding-block: 0.18rem;
-  }
+@media (orientation: landscape) and (max-height: 32rem) and (max-width: 58rem) {
+  .brand-logo { height: 2.8rem !important; }
+  .meter-bar { padding-block: 0.16rem !important; }
+  .machine { grid-template-columns: minmax(0,1.08fr) minmax(14rem,0.92fr); padding: 0.35rem !important; }
+  .card, .card-back { max-height: 24vh !important; }
+  .status-panel { min-height: 1.9rem !important; }
+  .coin-button { min-height: 1.75rem !important; }
+  .deal-button { min-height: 2.1rem !important; }
+  .result-grid { grid-template-columns: repeat(3, minmax(0,1fr)) !important; }
+  .result-caption { font-size: 0.48rem !important; }
 }
