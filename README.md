@@ -37,4 +37,4 @@ npm run validate
 
 ## Deployment
 
-The included GitHub Pages workflow enables Pages and publishes the repository root whenever `main` is updated.
+For a new repository, first open **Settings → Pages** and set **Source** to **GitHub Actions**. The included workflow then publishes the repository root whenever `main` is updated. Its `enablement` setting is retained as a convenience for accounts that allow workflow-based Pages activation.
