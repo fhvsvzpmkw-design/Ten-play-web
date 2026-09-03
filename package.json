@@ -1,0 +1,11 @@
+{
+  "name": "ten-play-web",
+  "version": "1.9.1-web.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/cards.js && node --check src/engine.js && node --check src/strategy.js && node --check src/app.js && node --check src/ev-worker.js",
+    "validate": "npm run check && npm test"
+  }
+}

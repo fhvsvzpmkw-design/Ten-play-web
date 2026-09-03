@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#062b17" />
+    <meta
+      name="description"
+      content="Ten Play 9/6 Jacks or Better video poker trainer and simulator."
+    />
+    <title>Ten Play Video Poker</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-labelledby="app-title">
+      <header class="masthead">
+        <p class="eyebrow">9/6 Jacks or Better</p>
+        <h1 id="app-title"><span aria-hidden="true">◆</span> Ten Play <span aria-hidden="true">◆</span></h1>
+        <div class="mode-switch" role="group" aria-label="Display mode">
+          <button type="button" class="mode-button is-active" data-mode="trainer">Trainer</button>
+          <button type="button" class="mode-button" data-mode="casino">Casino</button>
+        </div>
+      </header>
+
+      <section class="meter-bar" aria-label="Session totals">
+        <div>
+          <span class="meter-label">Credits</span>
+          <strong id="credits" class="meter-value">1,000</strong>
+        </div>
+        <div>
+          <span class="meter-label">Session RTP</span>
+          <strong id="rtp" class="meter-value">0.0%</strong>
+        </div>
+        <div class="meter-detail">
+          <span>In <b id="total-in">0</b></span>
+          <span>Out <b id="total-out">0</b></span>
+        </div>
+      </section>
+
+      <section class="machine" aria-label="Video poker game">
+        <div id="main-hand" class="main-hand" aria-label="Main hand"></div>
+
+        <div class="status-panel" aria-live="polite">
+          <strong id="status-primary">Tap Deal</strong>
+          <span id="status-secondary">Trainer Mode</span>
+        </div>
+
+        <div class="wager-row">
+          <div class="coin-buttons" role="group" aria-label="Coins per hand">
+            <button type="button" class="coin-button" data-coins="1">1×</button>
+            <button type="button" class="coin-button" data-coins="2">2×</button>
+            <button type="button" class="coin-button" data-coins="3">3×</button>
+            <button type="button" class="coin-button" data-coins="4">4×</button>
+            <button type="button" class="coin-button is-active" data-coins="5">5×</button>
+          </div>
+          <span id="total-bet" class="total-bet">5 × 10 = 50 credits</span>
+        </div>
+
+        <button type="button" id="deal-draw" class="deal-button">Deal — Trainer</button>
+
+        <section id="suggestions-panel" class="suggestions-panel" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Decision support</p>
+              <h2>Suggested holds</h2>
+            </div>
+            <span id="suggestion-state" class="calculation-state">Estimating</span>
+          </div>
+          <div id="suggestions" class="suggestions"></div>
+          <button type="button" id="exact-button" class="secondary-button">Show exact EV for these holds</button>
+        </section>
+
+        <section id="results-panel" class="results-panel" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Round result</p>
+              <h2>Ten hands</h2>
+            </div>
+            <strong id="round-total" class="round-total">0 credits</strong>
+          </div>
+          <div id="result-grid" class="result-grid"></div>
+        </section>
+      </section>
+
+      <footer>
+        <button type="button" id="reset-session" class="text-button">Reset session</button>
+        <span>Strategy verification pending from Swift v1.9.1</span>
+      </footer>
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
