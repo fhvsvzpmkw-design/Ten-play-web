@@ -1,0 +1,440 @@
+/* Unified viewport layout for iPhone, iPad, Split View, Stage Manager, and Safari. */
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+}
+
+/* Keep the branded masthead readable at every size instead of cover-cropping it. */
+.brand-logo {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #001309;
+}
+
+/* Treat the app as a cabinet with a controlled maximum width rather than a desktop page. */
+.app-shell {
+  width: min(100%, 72rem);
+}
+
+@media (orientation: portrait) {
+  html,
+  body {
+    position: fixed;
+    inset: 0;
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  .app-shell {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    gap: clamp(0.28rem, 0.8vh, 0.5rem);
+    width: 100%;
+    height: 100dvh;
+    min-height: 0;
+    margin: 0;
+    padding:
+      max(0.35rem, env(safe-area-inset-top))
+      max(0.55rem, env(safe-area-inset-left))
+      max(0.35rem, env(safe-area-inset-bottom))
+      max(0.55rem, env(safe-area-inset-right));
+    overflow: hidden;
+  }
+
+  .masthead {
+    display: block !important;
+    min-height: 0;
+    margin: 0 !important;
+    padding: clamp(0.26rem, 0.7vw, 0.42rem) !important;
+  }
+
+  .brand-logo {
+    height: clamp(4.5rem, 11vh, 7rem) !important;
+    max-height: 7rem !important;
+  }
+
+  .masthead .eyebrow {
+    display: block !important;
+    left: clamp(0.45rem, 1.5vw, 0.8rem) !important;
+    bottom: clamp(0.42rem, 1vw, 0.68rem) !important;
+    font-size: clamp(0.48rem, 1.2vw, 0.61rem) !important;
+  }
+
+  .masthead .mode-switch {
+    right: clamp(0.45rem, 1.5vw, 0.8rem) !important;
+    bottom: clamp(0.38rem, 1vw, 0.62rem) !important;
+    transform: none !important;
+  }
+
+  .mode-switch {
+    grid-template-columns: repeat(2, minmax(4.4rem, 1fr)) !important;
+  }
+
+  .mode-button {
+    min-height: clamp(1.9rem, 4.2vh, 2.35rem) !important;
+    padding: 0.32rem clamp(0.55rem, 1.5vw, 0.9rem) !important;
+    font-size: clamp(0.72rem, 1.7vw, 0.86rem) !important;
+  }
+
+  .meter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) auto !important;
+    align-items: center !important;
+    gap: clamp(0.4rem, 1.8vw, 1rem) !important;
+    min-height: 0;
+    margin: 0 !important;
+    padding: clamp(0.28rem, 0.8vh, 0.52rem) clamp(0.48rem, 1.8vw, 0.9rem) !important;
+  }
+
+  .meter-detail {
+    grid-column: auto !important;
+    justify-content: end !important;
+    gap: clamp(0.25rem, 1vw, 0.55rem) !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .meter-value {
+    font-size: clamp(1.05rem, 3.4vw, 1.5rem) !important;
+  }
+
+  .machine {
+    display: flex !important;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+    padding: clamp(0.42rem, 1.4vw, 0.78rem) !important;
+    overflow: hidden;
+  }
+
+  .main-hand {
+    flex: 0 1 auto;
+    width: min(100%, 48rem);
+    margin-inline: auto;
+    gap: clamp(0.2rem, 1vw, 0.58rem) !important;
+  }
+
+  .card,
+  .card-back {
+    max-height: clamp(7.8rem, 20vh, 13.5rem) !important;
+  }
+
+  .status-panel {
+    flex: 0 0 auto;
+    min-height: clamp(2.3rem, 5.2vh, 3.1rem) !important;
+    margin: clamp(0.22rem, 0.65vh, 0.42rem) 0 !important;
+    padding: 0.15rem !important;
+  }
+
+  .wager-row {
+    display: flex !important;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.4rem !important;
+  }
+
+  .coin-buttons {
+    flex: 1 1 auto;
+  }
+
+  .coin-button {
+    min-height: clamp(1.9rem, 4.5vh, 2.35rem) !important;
+  }
+
+  .total-bet {
+    flex: 0 0 auto;
+    text-align: right !important;
+  }
+
+  .deal-button {
+    flex: 0 0 auto;
+    min-height: clamp(2.35rem, 5.2vh, 3rem) !important;
+    margin-top: clamp(0.26rem, 0.65vh, 0.48rem) !important;
+  }
+
+  .suggestions-panel,
+  .results-panel {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: clamp(0.25rem, 0.65vh, 0.45rem) !important;
+    padding-top: clamp(0.25rem, 0.65vh, 0.45rem) !important;
+    overflow: hidden;
+  }
+
+  .result-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: clamp(0.2rem, 0.8vw, 0.38rem) !important;
+  }
+
+  .result-hand {
+    min-width: 0;
+    padding: clamp(0.2rem, 0.7vw, 0.36rem) !important;
+  }
+
+  footer {
+    display: none !important;
+  }
+}
+
+/* Narrow portrait / windowed mode: same cabinet, denser result grid. */
+@media (orientation: portrait) and (max-width: 44rem) {
+  .brand-logo {
+    height: clamp(4rem, 10vh, 5.6rem) !important;
+  }
+
+  .masthead .eyebrow {
+    font-size: 0.5rem !important;
+  }
+
+  .masthead .mode-switch {
+    transform: scale(0.9) !important;
+    transform-origin: right bottom !important;
+  }
+
+  .meter-label,
+  .meter-detail span {
+    font-size: 0.58rem !important;
+  }
+
+  .result-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .result-card {
+    font-size: clamp(0.42rem, 2.1vw, 0.6rem) !important;
+  }
+}
+
+/* Wide/short cabinet: no scrolling, with the main game at left and support/results at right. */
+@media (orientation: landscape) and (max-height: 60rem) {
+  html,
+  body {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  .app-shell {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    gap: clamp(0.28rem, 0.8vh, 0.45rem);
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    min-height: 0;
+    margin: 0;
+    padding:
+      max(0.3rem, env(safe-area-inset-top))
+      max(0.55rem, env(safe-area-inset-right))
+      max(0.3rem, env(safe-area-inset-bottom))
+      max(0.55rem, env(safe-area-inset-left));
+    overflow: hidden;
+  }
+
+  .masthead {
+    display: block !important;
+    min-height: 0;
+    margin: 0 !important;
+    padding: 0.28rem !important;
+    border-radius: 0.78rem !important;
+  }
+
+  .brand-logo {
+    height: clamp(3.3rem, 9vh, 5rem) !important;
+    max-height: 5rem !important;
+  }
+
+  .masthead .eyebrow {
+    left: 0.5rem !important;
+    bottom: 0.42rem !important;
+    font-size: 0.5rem !important;
+  }
+
+  .masthead .mode-switch {
+    right: 0.5rem !important;
+    bottom: 0.36rem !important;
+    transform: scale(0.82) !important;
+    transform-origin: right bottom !important;
+  }
+
+  .meter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) auto !important;
+    align-items: center !important;
+    gap: clamp(0.45rem, 2vw, 1.2rem) !important;
+    min-height: 0;
+    margin: 0 !important;
+    padding: clamp(0.22rem, 0.7vh, 0.42rem) clamp(0.5rem, 1.4vw, 0.9rem) !important;
+  }
+
+  .meter-detail {
+    grid-column: auto !important;
+    justify-content: end !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .meter-value {
+    font-size: clamp(1rem, 2.2vw, 1.35rem) !important;
+  }
+
+  .machine {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.12fr) minmax(18rem, 0.88fr);
+    grid-template-rows: minmax(0, 1fr) auto auto auto;
+    column-gap: clamp(0.55rem, 1.4vw, 1rem);
+    row-gap: clamp(0.24rem, 0.65vh, 0.42rem);
+    min-height: 0;
+    height: 100%;
+    padding: clamp(0.45rem, 1vw, 0.7rem) !important;
+    overflow: hidden;
+  }
+
+  .main-hand {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    width: min(100%, 47rem);
+    max-height: 100%;
+    margin-inline: auto;
+    gap: clamp(0.22rem, 0.8vw, 0.55rem) !important;
+  }
+
+  .card,
+  .card-back {
+    max-height: min(29vh, 12.5rem) !important;
+  }
+
+  .status-panel {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 2.35rem !important;
+    margin: 0 !important;
+    padding: 0.1rem !important;
+  }
+
+  .wager-row {
+    grid-column: 1;
+    grid-row: 3;
+    display: flex !important;
+    align-items: center;
+    gap: 0.45rem !important;
+  }
+
+  .coin-buttons {
+    flex: 1 1 auto;
+  }
+
+  .coin-button {
+    min-height: 2rem !important;
+  }
+
+  .total-bet {
+    flex: 0 0 auto;
+    font-size: 0.7rem !important;
+    text-align: right !important;
+  }
+
+  .deal-button {
+    grid-column: 1;
+    grid-row: 4;
+    min-height: 2.45rem !important;
+    margin: 0 !important;
+  }
+
+  .suggestions-panel,
+  .results-panel {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    min-height: 0;
+    margin: 0 !important;
+    padding: 0 0 0 clamp(0.45rem, 1vw, 0.7rem) !important;
+    border-top: 0 !important;
+    border-left: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  .section-heading {
+    margin-bottom: 0.35rem !important;
+  }
+
+  .result-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: clamp(0.18rem, 0.45vw, 0.34rem) !important;
+  }
+
+  .result-hand {
+    min-width: 0;
+    padding: clamp(0.18rem, 0.45vw, 0.32rem) !important;
+  }
+
+  .result-card {
+    font-size: clamp(0.42rem, 0.8vw, 0.61rem) !important;
+  }
+
+  .suggestions {
+    gap: 0.3rem !important;
+  }
+
+  .suggestion {
+    padding: 0.38rem 0.48rem !important;
+  }
+
+  .secondary-button {
+    min-height: 2.25rem !important;
+    margin-top: 0.35rem !important;
+  }
+
+  footer {
+    display: none !important;
+  }
+}
+
+/* Very narrow landscape phones keep the same two-zone idea but compress the support side. */
+@media (orientation: landscape) and (max-height: 32rem) and (max-width: 58rem) {
+  .brand-logo {
+    height: 2.8rem !important;
+  }
+
+  .meter-bar {
+    padding-block: 0.16rem !important;
+  }
+
+  .machine {
+    grid-template-columns: minmax(0, 1.08fr) minmax(14rem, 0.92fr);
+    padding: 0.35rem !important;
+  }
+
+  .card,
+  .card-back {
+    max-height: 24vh !important;
+  }
+
+  .status-panel {
+    min-height: 1.9rem !important;
+  }
+
+  .coin-button {
+    min-height: 1.75rem !important;
+  }
+
+  .deal-button {
+    min-height: 2.1rem !important;
+  }
+
+  .result-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .result-caption {
+    font-size: 0.48rem !important;
+  }
+}
