@@ -1,0 +1,18 @@
+{
+  "brand": "Vig Wire Labs \u2014 10 Play Video Poker",
+  "source": "Approved ChatGPT-generated concept board",
+  "format": "PNG raster concept assets",
+  "recommended_repo_path": "assets/branding/ten-play/",
+  "assets": [
+    "logo-primary-wide.png",
+    "logo-badge-round.png",
+    "logo-badge-vertical.png",
+    "logo-cards-badge.png",
+    "app-icon-vig-wire.png",
+    "app-icon-cards.png",
+    "app-icon-10-play.png",
+    "felt-logo-treatment.png",
+    "brand-concept-board.png",
+    "README.md"
+  ]
+}
