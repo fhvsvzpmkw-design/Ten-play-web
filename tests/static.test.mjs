@@ -9,7 +9,11 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 test("entry page references local assets that exist", async () => {
   const html = await readFile(resolve(projectRoot, "index.html"), "utf8");
   const paths = [...html.matchAll(/(?:href|src)="\.\/([^"#?]+)(?:[?#][^"]*)?"/g)].map((match) => match[1]);
-  assert.deepEqual(paths.sort(), ["src/app.js", "styles.css"]);
+  assert.deepEqual(paths.sort(), [
+    "assets/branding/ten-play/logo-primary-wide.png",
+    "src/app.js",
+    "styles.css",
+  ]);
   await Promise.all(paths.map((path) => access(resolve(projectRoot, path))));
 });
 
