@@ -31,6 +31,23 @@
           0 0 42px 16px rgba(65, 220, 122, 0.55);
         z-index: 3;
       }
+
+      /* Match the stronger green win treatment in the nine secondary hands. */
+      .result-card.is-winning {
+        position: relative;
+        border-color: #67ff9f;
+        box-shadow:
+          inset 0 0 0 1px rgba(103, 255, 159, 0.7),
+          0 0 0 2px rgba(65, 220, 122, 0.9),
+          0 0 9px 3px rgba(65, 220, 122, 0.75),
+          0 0 18px 6px rgba(65, 220, 122, 0.48);
+        z-index: 2;
+      }
+
+      /* The first outcome is already displayed as the large main hand above. */
+      .result-grid .result-hand:first-child {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -96,7 +113,7 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">Round result</p>
-              <h2>Ten hands</h2>
+              <h2>Nine hands</h2>
             </div>
             <strong id="round-total" class="round-total">0 credits</strong>
           </div>
